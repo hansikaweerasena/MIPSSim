@@ -11,6 +11,25 @@ program_counter = 0
 break_flag = False
 
 
+class Buffer:
+    def __init__(self, size):
+        self.size = size
+        self.quque = []
+
+    def append(self, content):
+        self.quque.append(content)
+
+    def pop(self):
+        return self.quque.pop(0)
+
+    def is_full(self):
+        return len(self.quque) >= self.size
+
+
+class FetchDecodeUnit:
+    def __init__(self):
+        self.is_stalled
+
 def read_file_line_by_line(filename):
     file1 = open(filename, 'r')
     lines = file1.readlines()
