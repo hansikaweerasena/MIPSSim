@@ -33,7 +33,7 @@ class Memory:
     def print_vals(self, file):
         index_d = 0
         file.write("\nData\n")
-        for index, data in enumerate(disassembled_memory[data_memory_pointer:]):
+        for index, data in enumerate(self.current_memory[data_memory_pointer:]):
             if index % 8 == 0:
                 file.write(str(STARTING_MEMORY_ADDRESS + (data_memory_pointer + index) * 4) + ":\t")
             file.write(str(data))
@@ -698,8 +698,8 @@ def write_status_to_file(file, cycle):
     file.write("\n")
     register_file.print_vals(file)
     memory.print_vals(file)
-    if not break_flag:
-        file.write("\n")
+    # if not break_flag:
+    #     file.write("\n")
 
 
 def all_buffes_not_empty(buffers):
