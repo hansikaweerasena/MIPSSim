@@ -1,5 +1,6 @@
 # Hansika Weerasena
 # Command to run on terminal: python3 MIPSsim.py inputfilename.txt
+# On my honor, I have neither given nor received unauthorized aid on this assignment.
 
 import sys
 
@@ -306,7 +307,6 @@ class IssueUnit:
                 if indexed_ins[1][1] in ['LW', 'SW']:
                     if current_free_buf2 > 0 and not is_prev_unissued_sw:
                         self.buf2.append(self.buf1.pop(idx))
-                        self.scoreboard.add_data_issue_dependency(indexed_ins[1], indexed_ins[0])
                         current_free_buf2 = current_free_buf2 - 1
                         idx = idx -1
                     else:
@@ -314,13 +314,11 @@ class IssueUnit:
                 if indexed_ins[1][1] in ['ADD', 'SUB', 'AND', 'OR', 'SRL', 'SRA', 'ADDI', 'ANDI', 'ORI']:
                     if current_free_buf3 > 0:
                         self.buf3.append(self.buf1.pop(idx))
-                        self.scoreboard.add_data_issue_dependency(indexed_ins[1], indexed_ins[0])
                         current_free_buf3 = current_free_buf3 - 1
                         idx = idx - 1
                 if indexed_ins[1][1] == 'MUL':
                     if current_free_buf4 > 0:
                         self.buf4.append(self.buf1.pop(idx))
-                        self.scoreboard.add_data_issue_dependency(indexed_ins[1], indexed_ins[0])
                         current_free_buf4 = current_free_buf4 - 1
                         idx = idx - 1
             idx = idx + 1
