@@ -748,7 +748,8 @@ write_disassembled_code_to_file(memory_content, disassembled_memory)
 filez = open("simulation.txt", 'w')
 
 cycle = 0
-while (not break_flag) or all_buffes_not_empty(buffer_list):
+# while (not break_flag) or all_buffes_not_empty(buffer_list):
+while not break_flag:
     recording_cycle = cycle // 2 + 1
     if cycle % 2 == 0:
         fetch_decode_unit.execute()
