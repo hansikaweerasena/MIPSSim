@@ -25,7 +25,7 @@ class Memory:
         return self.current_memory[index]
 
     def propagate_values(self):
-        for key, value in self.future_memory:
+        for key, value in self.future_memory.items():
             self.current_memory[key] = value
         self.future_memory = {}
 
@@ -41,8 +41,8 @@ class Memory:
             else:
                 file.write("\t")
             index_d = index
-        if (index_d + 1) % 8 != 0:
-            file.write("\n")
+        # if (index_d + 1) % 8 != 0:
+        #     file.write("\n")
 
 
 class RegisterFile:
@@ -57,7 +57,7 @@ class RegisterFile:
         return self.current_registers[index]
 
     def propagate_values(self):
-        for key, value in self.future_registers:
+        for key, value in self.future_registers.items():
             self.current_registers[key] = value
         self.future_registers = {}
 
@@ -91,8 +91,13 @@ class Buffer:
         if len(self.current_queue) == 0:
             return None
         else:
-            self.future_queue.pop(buf_id)
             return self.current_queue.pop(buf_id)
+
+    def peak(self, buf_id=0):
+        if len(self.current_queue) == 0:
+            return None
+        else:
+            return self.current_queue[buf_id]
 
     def is_full(self):
         return len(self.current_queue) >= self.size
@@ -112,15 +117,15 @@ class Buffer:
                 file.write(get_instruction_str(self.current_queue[i][1]))
                 file.write("\n")
             for i in range(len(self.current_queue),self.size):
-                file.write("\t" + "Entry " + str(i) + ": ")
+                file.write("\t" + "Entry " + str(i) + ":")
                 file.write("\n")
         else:
             file.write("Buf" + str(self.no) + ":")
             if len(self.current_queue) > 0:
                 if self.no in [8, 6, 10]:
-                    file.write("[" + str(self.current_queue[0][1][0]) + "," + str(self.current_queue[0][1][0]) + "]")
+                    file.write(" [" + str(self.current_queue[0][1]) + ", " + str(self.current_queue[0][2]) + "]")
                 else:
-                    get_instruction_str(self.current_queue[0][1])
+                    file.write(" " + get_instruction_str(self.current_queue[0][1]))
             file.write("\n")
 
 
@@ -141,7 +146,7 @@ class FetchDecodeUnit:
         if not self.is_stalled:
             self.branch_inst = None
         if not self.is_stalled and not self.buf1.is_full():
-            for i in range(max(self.buf1.get_no_empty_slots(), 4)):
+            for i in range(min(self.buf1.get_no_empty_slots(), 4)):
                 instruction = memory.get(self.program_counter)
                 self.program_counter += 1
                 if instruction[1] == 'BREAK':
@@ -154,7 +159,7 @@ class FetchDecodeUnit:
                     break
                 else:
                     self.inst_id += 1
-                    self.new_ins.append([self.inst_id, instruction])
+                    self.new_ins.append([self.inst_id, instruction, False])
                     self.scoreboard.add_data_branch_dependency(instruction, self.inst_id)
                     self.buf1.append([self.inst_id, instruction])
         elif self.is_stalled:
@@ -163,7 +168,7 @@ class FetchDecodeUnit:
     def handle_branch_instruction(self, instruction):
         try:
             if instruction[1] == 'J':
-                target = (int(instruction[1][1:]) - STARTING_MEMORY_ADDRESS) // 4
+                target = (int(instruction[2][1:]) - STARTING_MEMORY_ADDRESS) // 4
                 self.program_counter = target
             elif instruction[1] == 'BEQ':
                 rs = self.scoreboard.get_reg_value_for_branch(int(instruction[2][1:]))
@@ -193,11 +198,13 @@ class FetchDecodeUnit:
 
     def print_vals(self, file):
         file.write("IF:\n")
-        file.write("\tWaiting: ")
+        file.write("\tWaiting:")
         if self.is_stalled:
+            file.write(" ")
             file.write(get_instruction_str(self.branch_inst))
-        file.write("\n\tExecuted: ")
+        file.write("\n\tExecuted:")
         if not self.is_stalled and self.branch_inst is not None:
+            file.write(" ")
             file.write(get_instruction_str(self.branch_inst))
         file.write("\n")
 
@@ -226,9 +233,10 @@ class ScoreBoard:
                 self.data_dependencies_for_issue.pop(key)
 
     def remove_data_branch_dependency(self, ins_id):
-        for key, value in self.data_dependencies_for_branch:
-            if value == ins_id:
-                self.data_dependencies_for_branch.pop(key)
+        print(ins_id)
+        for i in list(self.data_dependencies_for_branch):
+            if self.data_dependencies_for_branch[i] == ins_id:
+                self.data_dependencies_for_branch.pop(i)
 
     def check_reg_for_data_dependency_branch(self, reg_id):
         if reg_id in self.data_dependencies_for_branch:
@@ -240,21 +248,21 @@ class ScoreBoard:
 
     def get_reg_value_for_branch(self, reg_id):
         self.check_reg_for_data_dependency_branch(reg_id)
-        return self.register_file[reg_id]
+        return self.register_file.get(reg_id)
 
     def get_reg_value_for_issue(self, reg_id):
         self.check_reg_for_data_dependency_issue(reg_id)
-        return self.register_file[reg_id]
+        return self.register_file.get(reg_id)
 
     def set_fetched_ins_id(self, fetch_id):
         self.last_fetched_ins_id = fetch_id
 
     def set_committed_ins_id(self, commit_id):
-        self.last_committed_ins_id = self.last_committed_ins_id + 1
+        self.last_committed_ins_id = commit_id
 
     def have_RAW_hazard(self, indexed_ins):
         all_writing_regs = []
-        for inst in self.reorder_buffer[self.last_committed_ins_id: self.last_fetched_ins_id + 1]:
+        for inst in self.reorder_buffer[self.last_committed_ins_id + 1: indexed_ins[0]]:
             if inst[0] is not indexed_ins[0]:
                 all_writing_regs.append(get_writing_reg_id(inst[1]))
         for reg_id in get_reading_reg_ids(indexed_ins[1]):
@@ -264,7 +272,8 @@ class ScoreBoard:
 
     def have_WAW_hazard(self, indexed_ins):
         all_writing_regs = []
-        for inst in self.reorder_buffer[self.last_committed_ins_id: self.last_fetched_ins_id + 1]:
+        # for inst in self.reorder_buffer[self.last_committed_ins_id: self.last_fetched_ins_id + 1]:
+        for inst in self.reorder_buffer[self.last_committed_ins_id + 1: indexed_ins[0]]:
             if inst[0] is not indexed_ins[0]:
                 all_writing_regs.append(get_writing_reg_id(inst[1]))
         if get_writing_reg_id(indexed_ins[1]) in all_writing_regs:
@@ -272,10 +281,10 @@ class ScoreBoard:
         else:
             return False
 
-    def have_WAR_hazard(self, indexed_ins):
+    def have_WAR_hazard(self, indexed_ins, first_in_buf):
         all_reading_regs = []
-        for inst in self.reorder_buffer[indexed_ins[0]: self.last_fetched_ins_id + 1]:
-            all_reading_regs + get_reading_reg_ids(inst[1])
+        for inst in self.reorder_buffer[first_in_buf: indexed_ins[0]]:
+            all_reading_regs = all_reading_regs + get_reading_reg_ids(inst[1])
         if get_writing_reg_id(indexed_ins[1]) in all_reading_regs:
             return True
         else:
@@ -290,47 +299,56 @@ class IssueUnit:
         self.buf2 = buf2
         self.buf3 = buf3
         self.buf4 = buf4
+        self.first_in_buf = 0
 
     def execute(self):
+        if len(self.buf1.current_queue) > 0:
+            self.first_in_buf = self.buf1.peak()[0]
         current_free_buf2 = self.buf2.get_no_empty_slots()
         current_free_buf3 = self.buf3.get_no_empty_slots()
         current_free_buf4 = self.buf4.get_no_empty_slots()
         is_prev_unissued_sw = False
 
-        for idx, indexed_ins in self.buf1.current_queue:
+        idx = 0
+        while idx < len(self.buf1.current_queue):
+            indexed_ins = self.buf1.current_queue[idx]
             if self.instruction_eligible_to_issue(indexed_ins):
                 if indexed_ins[1][1] in ['LW', 'SW']:
                     if current_free_buf2 > 0 and not is_prev_unissued_sw:
-                        self.buf1.pop(idx)
-                        self.buf2.append(indexed_ins)
+                        self.buf2.append(self.buf1.pop(idx))
                         self.scoreboard.add_data_issue_dependency(indexed_ins[1], indexed_ins[0])
                         current_free_buf2 = current_free_buf2 - 1
+                        idx = idx -1
                     else:
                         is_prev_unissued_sw = True
                 if indexed_ins[1][1] in ['ADD', 'SUB', 'AND', 'OR', 'SRL', 'SRA', 'ADDI', 'ANDI', 'ORI']:
                     if current_free_buf3 > 0:
-                        self.buf1.pop(idx)
-                        self.buf3.append(indexed_ins)
+                        self.buf3.append(self.buf1.pop(idx))
                         self.scoreboard.add_data_issue_dependency(indexed_ins[1], indexed_ins[0])
                         current_free_buf3 = current_free_buf3 - 1
+                        idx = idx - 1
                 if indexed_ins[1][1] is 'MUL':
                     if current_free_buf4 > 0:
-                        self.buf1.pop(idx)
-                        self.buf4.append(indexed_ins)
+                        self.buf4.append(self.buf1.pop(idx))
                         self.scoreboard.add_data_issue_dependency(indexed_ins[1], indexed_ins[0])
                         current_free_buf4 = current_free_buf4 - 1
+                        idx = idx - 1
+            idx = idx + 1
 
     def instruction_eligible_to_issue(self, indexed_ins):
         if self.have_data_hazards(indexed_ins):
             return False
+        else:
+            return True
 
     def have_data_hazards(self, indexed_ins):
         if self.scoreboard.have_RAW_hazard(indexed_ins):
             return True
         if self.scoreboard.have_WAW_hazard(indexed_ins):
             return True
-        if self.scoreboard.have_WAR_hazard(indexed_ins):
+        if self.scoreboard.have_WAR_hazard(indexed_ins, self.first_in_buf):
             return True
+        return False
 
 
 class ALU1:
@@ -355,7 +373,7 @@ class Mem:
         indexed_instruction = self.buf5.pop()
         if indexed_instruction is not None:
             instruction = indexed_instruction[1]
-            if instruction[1][1] == 'SW':
+            if instruction[1] == 'SW':
                 rt = self.register_file.get(int(instruction[2][1:]))
                 temp = instruction[3].split('(')
                 offset = int(temp[0])
@@ -367,8 +385,7 @@ class Mem:
                 offset = int(temp[0])
                 base = self.register_file.get(int(temp[1].replace(")", "")[1:]))
                 value = int(self.memory.get((base + offset - STARTING_MEMORY_ADDRESS) // 4))
-                # self.register_file.change(rt, value)
-                self.buf8.append([value, 'R' + str(rt)])
+                self.buf8.append([indexed_instruction[0], value, 'R' + str(rt)])
 
 
 class ALU2:
@@ -382,7 +399,7 @@ class ALU2:
         if indexed_instruction is not None:
             instruction = indexed_instruction[1]
             ans = None
-            if instruction[0] is 1:
+            if instruction[0] is 2:
                 rd = int(instruction[2][1:])
                 rs = self.register_file.get(int(instruction[3][1:]))
                 rt = self.register_file.get(int(instruction[4][1:]))
@@ -406,7 +423,7 @@ class ALU2:
                     ans = rt >> sa
                 else:
                     raise ValueError("Invalid Operation")
-                self.buf8.append([indexed_instruction[0], ans, 'R' + str(rd)])
+                self.buf6.append([indexed_instruction[0], ans, 'R' + str(rd)])
             else:
                 rt = int(instruction[2][1:])
                 rs = self.register_file.get(int(instruction[3][1:]))
@@ -421,7 +438,7 @@ class ALU2:
                     ans = check_to_overflow_and_correct(temp)
                 else:
                     raise ValueError("Invalid Operation")
-                self.buf8.append([indexed_instruction[0], ans, 'R' + str(rt)])
+                self.buf6.append([indexed_instruction[0], ans, 'R' + str(rt)])
 
 
 class Mul:
@@ -460,10 +477,10 @@ class WB:
         if val1 is not None:
             self.write_back(val1)
         val2 = self.in_buf2.pop()
-        if val1 is not None:
+        if val2 is not None:
             self.write_back(val2)
         val3 = self.in_buf3.pop()
-        if val1 is not None:
+        if val3 is not None:
             self.write_back(val3)
 
     def write_back(self, ans):
@@ -476,9 +493,11 @@ class WB:
         for i in range(0, 100000):
             if i not in self.committed_ids:
                 new_committed_id = i - 1
+                break
         self.scoreboard.set_committed_ins_id(new_committed_id)
         for ins_id in self.new_committed_ids:
             self.scoreboard.remove_data_branch_dependency(ins_id)
+            self.scoreboard.reorder_buffer[ins_id][2] = True
         self.new_committed_ids = []
 
 
@@ -490,7 +509,7 @@ def record_data_dependencies(instruction, ins_id, dependency_map):
 
 def get_writing_reg_id(instruction):
     if instruction[0] == 1:
-        if instruction[1] in ['SW', 'LW']:
+        if instruction[1] is 'LW':
             return int(instruction[2][1:])
         else:
             return None
@@ -503,9 +522,11 @@ def get_reading_reg_ids(instruction):
     if instruction[1] in ['SW', 'LW']:
         temp = instruction[3].split('(')
         reading_reg_ids.append(int(temp[1].replace(")", "")[1:]))
+        if instruction[1] is 'SW':
+            reading_reg_ids.append(int(instruction[2][1:]))
     else:
         reading_reg_ids.append(int(instruction[3][1:]))
-        if instruction[0] in ['ADD', 'SUB', 'AND', 'OR', 'MUL']:
+        if instruction[1] in ['ADD', 'SUB', 'AND', 'OR', 'MUL']:
             reading_reg_ids.append(int(instruction[4][1:]))
     return reading_reg_ids
 
@@ -703,16 +724,16 @@ disassemble_memory(memory_content, disassembled_memory)
 
 memory = Memory(disassembled_memory)
 register_file = RegisterFile()
-buf1 = Buffer(8,1)
-buf2 = Buffer(2,2)
-buf3 = Buffer(2,3)
-buf4 = Buffer(2,4)
-buf5 = Buffer(1,5)
-buf6 = Buffer(1,6)
-buf7 = Buffer(1,7)
-buf8 = Buffer(1,8)
-buf9 = Buffer(1,9)
-buf10 = Buffer(1,10)
+buf1 = Buffer(8, 1)
+buf2 = Buffer(2, 2)
+buf3 = Buffer(2, 3)
+buf4 = Buffer(2, 4)
+buf5 = Buffer(1, 5)
+buf6 = Buffer(1, 6)
+buf7 = Buffer(1, 7)
+buf8 = Buffer(1, 8)
+buf9 = Buffer(1, 9)
+buf10 = Buffer(1, 10)
 
 scoreboard = ScoreBoard(register_file)
 fetch_decode_unit = FetchDecodeUnit(buf1, memory, register_file, 0, scoreboard)
@@ -731,6 +752,7 @@ filez = open("simulation.txt", 'w')
 
 cycle = 0
 while not break_flag:
+    recording_cycle = cycle // 2 + 1
     if cycle % 2 == 0:
         fetch_decode_unit.execute()
         issue_unit.execute()
@@ -742,8 +764,9 @@ while not break_flag:
         mul3.execute()
         wb.execute()
     else:
+        fetch_decode_unit.propagate_values()
+        wb.propagate_values()
         memory.propagate_values()
-        register_file.propagate_values()
         buf1.propagate_values()
         buf2.propagate_values()
         buf3.propagate_values()
@@ -754,8 +777,7 @@ while not break_flag:
         buf8.propagate_values()
         buf9.propagate_values()
         buf10.propagate_values()
-        fetch_decode_unit.propagate_values()
-        wb.propagate_values()
-        write_status_to_file(filez, cycle//2 + 1)
+        register_file.propagate_values()
+        write_status_to_file(filez, recording_cycle)
     cycle += 1
 filez.close()
