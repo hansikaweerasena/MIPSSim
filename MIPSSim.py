@@ -7,28 +7,210 @@ STARTING_MEMORY_ADDRESS = 260
 disassembled_memory = []
 registerFile = [0] * 32
 data_memory_pointer = sys.maxsize
-program_counter = 0
+# program_counter = 0
 break_flag = False
+
+
+class DataDependencyError:
+    pass
+
+
+class Memory:
+    def __init__(self, memory_in):
+        self.current_memory = memory_in
+        self.future_memory = {}
+
+    def change(self, index, value):
+        self.future_memory[index] = value
+
+    def get(self, index):
+        return self.current_memory[index]
+
+    def propagate_values(self):
+        for key, value in self.future_memory:
+            self.current_memory[key] = value
+        self.future_memory = {}
+
+
+class RegisterFile:
+    def __init__(self):
+        self.current_registers = [0] * [32]
+        self.future_registers = {}
+
+    def change(self, index, value):
+        self.future_registers[index] = value
+
+    def get(self, index):
+        return self.current_registers[index]
+
+    def propagate_values(self):
+        for key, value in self.future_registers:
+            self.current_registers[key] = value
+        self.future_registers = {}
 
 
 class Buffer:
     def __init__(self, size):
         self.size = size
-        self.quque = []
+        self.current_queue = []
+        self.future_queue = []
 
     def append(self, content):
-        self.quque.append(content)
+        self.future_queue.append(content)
 
-    def pop(self):
-        return self.quque.pop(0)
+    def pop(self, buf_id=0):
+        self.future_queue.pop(buf_id)
+        return self.current_queue.pop(buf_id)
 
     def is_full(self):
-        return len(self.quque) >= self.size
+        return len(self.current_queue) >= self.size
+
+    def get_no_empty_slots(self):
+        return self.size -len(self.current_queue)
+
+    def propagate_values(self):
+        for key, value in self.future_queue:
+            self.current_queue[key] = value
+        self.future_queue = {}
 
 
 class FetchDecodeUnit:
+    def __init__(self, buf1, memory, register_file, program_counter, scoreboard):
+        self.is_stalled = False
+        self.buf1 = buf1
+        self.memory = memory
+        self.program_counter = program_counter
+        self.register_file = register_file
+        self.branch_inst = []
+        self.program_counter = program_counter
+        self.scoreboard = scoreboard
+        self.inst_id = -1
+
+    def fetch(self):
+        global break_flag
+        if not self.is_stalled:
+            self.branch_inst = []
+        if not self.is_stalled and not self.buf1.is_full():
+            for i in range(max(self.buf1.getget_no_empty_slots(), 4)):
+                instruction = memory[self.program_counter]
+                self.program_counter += 1
+                self.inst_id += 1
+                if instruction[0] == 'BREAK':
+                    break_flag = True
+                    break
+                if instruction[0] in ['J', 'BEQ', 'BNE', 'BGTZ']:
+                    self.is_stalled = True
+                    self.branch_inst = instruction
+                    self.handle_branch_instruction(instruction)
+                    break
+                else:
+                    self.scoreboard.add_data_delay_dependency(instruction, self.inst_id)
+                    self.buf1.append([self.inst_id, instruction])
+        elif self.is_stalled:
+            self.handle_branch_instruction(self.branch_inst)
+
+    def handle_branch_instruction(self, instruction):
+        try:
+            if instruction[0] == 'J':
+                target = (int(instruction[1][1:]) - STARTING_MEMORY_ADDRESS) // 4
+                self.program_counter = target
+            elif instruction[0] == 'BEQ':
+                rs = self.scoreboard.get_reg_value_for_branch(int(instruction[1][1:]))
+                rt = self.scoreboard.get_reg_value_for_branch(int(instruction[2][1:]))
+                offset = int(instruction[3][1:])
+                if rt == rs:
+                    self.program_counter = program_counter + offset // 4
+            elif instruction[0] == 'BNE':
+                rs = self.scoreboard.get_reg_value_for_branch(int(instruction[1][1:]))
+                rt = self.scoreboard.get_reg_value_for_branch(int(instruction[2][1:]))
+                offset = int(instruction[3][1:])
+                if rt != rs:
+                    self.program_counter = program_counter + offset // 4
+            elif instruction[0] == 'BGTZ':
+                rs = self.scoreboard.get_reg_value_for_branch(int(instruction[1][1:]))
+                offset = int(instruction[2][1:])
+                if rs > 0:
+                    self.program_counter = program_counter + offset // 4
+            self.is_stalled = False
+        except DataDependencyError:
+            pass
+
+
+class ScoreBoard:
+    def __init__(self, register_file):
+        self.data_dependencies_for_branch = {}
+        self.data_dependencies_for_issue = {}
+        self.register_file = register_file
+        self.reorder_buffer = []
+
+    def add_entry_for_reorder_buffer(self, instruction):
+        self.reorder_buffer.append(instruction)
+
+    def add_data_issue_dependency(self, ins, ins_id):
+        record_data_dependencies(ins, ins_id, self.data_dependencies_for_issue)
+
+    def add_data_branch_dependency(self, ins, ins_id):
+        record_data_dependencies(ins, ins_id, self.data_dependencies_for_branch)
+
+    def remove_data_issue_dependency(self, ins_id):
+        for key, value in self.data_dependencies_for_issue:
+            if value == ins_id:
+                self.data_dependencies_for_issue.pop(key)
+
+    def remove_data_branch_dependency(self, ins_id):
+        for key, value in self.data_dependencies_for_branch:
+            if value == ins_id:
+                self.data_dependencies_for_branch.pop(key)
+
+    def check_reg_for_data_dependency_branch(self, reg_id):
+        if reg_id in self.data_dependencies_for_branch:
+            raise DataDependencyError
+
+    def check_reg_for_data_dependency_issue(self, reg_id):
+        if reg_id in self.data_dependencies_for_issue:
+            raise DataDependencyError
+
+    def get_reg_value_for_branch(self, reg_id):
+        self.check_reg_for_data_dependency_branch(reg_id)
+        return self.register_file[reg_id]
+
+    def get_reg_value_for_issue(self, reg_id):
+        self.check_reg_for_data_dependency_issue(reg_id)
+        return self.register_file[reg_id]
+
+
+class IssueUnit:
     def __init__(self):
         self.is_stalled
+
+
+def record_data_dependencies(ins, ins_id, dependency_map):
+    if ins[0] == 1:
+        record_data_dependencies_cat_1_i(ins[1:], ins_id, dependency_map)
+    elif ins[0] == 2:
+        record_data_dependencies_cat_2_i(ins[1:], ins_id, dependency_map)
+    else:
+        record_data_dependencies_cat_3_i(ins[1:], ins_id, dependency_map)
+
+
+def record_data_dependencies_cat_1_i(instruction, ins_id, dependency_map):
+    if instruction[0] in ['SW', 'LW']:
+        dependency_map[int(instruction[1][1:])] = ins_id
+        temp = instruction[2].split('(')
+        dependency_map[int(temp[1].replace(")", "")[1:])] = ins_id
+
+
+def record_data_dependencies_cat_2_i(instruction, ins_id, dependency_map):
+    dependency_map[int(instruction[1][1:])] = ins_id
+    dependency_map[int(instruction[2][1:])] = ins_id
+    if instruction[0] in ['ADD', 'SUB', 'AND', 'OR', 'MUL']:
+        dependency_map[int(instruction[3][1:])] = ins_id
+
+
+def record_data_dependencies_cat_3_i(instruction, ins_id, dependency_map):
+    dependency_map[int(instruction[1][1:])] = ins_id
+    dependency_map[int(instruction[2][1:])] = ins_id
+
 
 def read_file_line_by_line(filename):
     file1 = open(filename, 'r')
@@ -335,11 +517,13 @@ write_disassembled_code_to_file(memory, disassembled_memory)
 
 filez = open("simulation.txt", 'w')
 
-cycle = 1
+cycle = 0
 while not break_flag:
-    instruction_pointer = program_counter
-    simulate_instruction()
-    write_status_to_file(filez, cycle)
+    if cycle % 2 == 0:
+        instruction_pointer = program_counter
+        simulate_instruction()
+    else:
+        #complete_write_to_reg()
+        write_status_to_file(filez, cycle)
     cycle += 1
-
 filez.close()
