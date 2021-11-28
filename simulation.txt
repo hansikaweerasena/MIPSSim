@@ -1,0 +1,1080 @@
+--------------------
+Cycle 1:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [SUB R1, R0, R0]
+	Entry 1: [AND R6, R0, R0]
+	Entry 2: [ADDI R2, R0, #-3]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 2:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [ADDI R2, R0, #-3]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [SUB R1, R0, R0]
+	Entry 1: [AND R6, R0, R0]
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 3:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [ADDI R2, R0, #-3]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [AND R6, R0, R0]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [0, R1]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 4:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R2, R0, #-3]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [0, R6]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 5:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [-3, R2]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 6:
+
+IF:
+	Waiting:
+	Executed: [BNE R1, R6, #36]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 7:
+
+IF:
+	Waiting:
+	Executed:
+Buf1:
+	Entry 0: [LW R13, 316(R16)]
+	Entry 1: [LW R14, 332(R6)]
+	Entry 2: [OR R15, R13, R14]
+	Entry 3: [ANDI R25, R15, #43690]
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 8:
+
+IF:
+	Waiting:
+	Executed:
+Buf1:
+	Entry 0: [OR R15, R13, R14]
+	Entry 1: [ANDI R25, R15, #43690]
+	Entry 2: [ORI R23, R13, #12]
+	Entry 3: [SRL R30, R23, #24]
+	Entry 4: [SW R30, 348(R6)]
+	Entry 5: [ADDI R6, R6, #4]
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [LW R13, 316(R16)]
+	Entry 1: [LW R14, 332(R6)]
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 9:
+
+IF:
+	Waiting:
+	Executed: [J #272]
+Buf1:
+	Entry 0: [OR R15, R13, R14]
+	Entry 1: [ANDI R25, R15, #43690]
+	Entry 2: [ORI R23, R13, #12]
+	Entry 3: [SRL R30, R23, #24]
+	Entry 4: [SW R30, 348(R6)]
+	Entry 5: [ADDI R6, R6, #4]
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [LW R14, 332(R6)]
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [LW R13, 316(R16)]
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 10:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [OR R15, R13, R14]
+	Entry 1: [ANDI R25, R15, #43690]
+	Entry 2: [ORI R23, R13, #12]
+	Entry 3: [SRL R30, R23, #24]
+	Entry 4: [SW R30, 348(R6)]
+	Entry 5: [ADDI R6, R6, #4]
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [LW R14, 332(R6)]
+Buf6:
+Buf7:
+Buf8: [-1, R13]
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 11:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [OR R15, R13, R14]
+	Entry 1: [ANDI R25, R15, #43690]
+	Entry 2: [ORI R23, R13, #12]
+	Entry 3: [SRL R30, R23, #24]
+	Entry 4: [SW R30, 348(R6)]
+	Entry 5: [ADDI R6, R6, #4]
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8: [12, R14]
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 12:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [OR R15, R13, R14]
+	Entry 1: [ANDI R25, R15, #43690]
+	Entry 2: [SRL R30, R23, #24]
+	Entry 3: [SW R30, 348(R6)]
+	Entry 4: [ADDI R6, R6, #4]
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ORI R23, R13, #12]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 13:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [ANDI R25, R15, #43690]
+	Entry 1: [SRL R30, R23, #24]
+	Entry 2: [SW R30, 348(R6)]
+	Entry 3: [ADDI R6, R6, #4]
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [OR R15, R13, R14]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [-1, R23]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 14:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [ANDI R25, R15, #43690]
+	Entry 1: [SRL R30, R23, #24]
+	Entry 2: [SW R30, 348(R6)]
+	Entry 3: [ADDI R6, R6, #4]
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [-1, R15]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	0
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 15:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [ANDI R25, R15, #43690]
+	Entry 1: [SRL R30, R23, #24]
+	Entry 2: [SW R30, 348(R6)]
+	Entry 3: [ADDI R6, R6, #4]
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 16:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [SRL R30, R23, #24]
+	Entry 1: [SW R30, 348(R6)]
+	Entry 2: [ADDI R6, R6, #4]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ANDI R25, R15, #43690]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 17:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [SRL R30, R23, #24]
+	Entry 1: [SW R30, 348(R6)]
+	Entry 2: [ADDI R6, R6, #4]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [43690, R25]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 18:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [SRL R30, R23, #24]
+	Entry 1: [SW R30, 348(R6)]
+	Entry 2: [ADDI R6, R6, #4]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 19:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [SW R30, 348(R6)]
+	Entry 1: [ADDI R6, R6, #4]
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [SRL R30, R23, #24]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 20:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [SW R30, 348(R6)]
+	Entry 1: [ADDI R6, R6, #4]
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [-1, R30]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 21:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [SW R30, 348(R6)]
+	Entry 1: [ADDI R6, R6, #4]
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	-1	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 22:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0: [ADDI R6, R6, #4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [SW R30, 348(R6)]
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	-1	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 23:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R6, R6, #4]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [SW R30, 348(R6)]
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	-1	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 24:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [4, R6]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	0	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	-1	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	-1	9	1	0	-1	1	-1	0
+--------------------
+Cycle 25:
+
+IF:
+	Waiting: [BNE R1, R6, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	4	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	-1	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	-1	9	1	0	-1	1	-1	0
+--------------------
+Cycle 26:
+
+IF:
+	Waiting:
+	Executed: [BNE R1, R6, #36]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	4	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	-1	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	-1	9	1	0	-1	1	-1	0
+--------------------
+Cycle 27:
+
+IF:
+	Waiting:
+	Executed: [BREAK]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	-3	0	0	0	4	0
+R08:	0	0	0	0	0	-1	12	-1
+R16:	0	0	0	0	0	0	0	-1
+R24:	0	43690	0	0	0	0	-1	0
+
+Data
+316:	-1	-2	-3	1	12	4	-4	10
+348:	-1	9	1	0	-1	1	-1	0

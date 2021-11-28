@@ -1,0 +1,2520 @@
+--------------------
+Cycle 1:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [ADD R1, R0, R0]
+	Entry 1: [ADD R6, R0, R0]
+	Entry 2: [ADDI R2, R0, #3]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 2:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [ADDI R2, R0, #3]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADD R1, R0, R0]
+	Entry 1: [ADD R6, R0, R0]
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 3:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [ADDI R2, R0, #3]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADD R6, R0, R0]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [0, R1]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 4:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R2, R0, #3]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [0, R6]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 5:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [3, R2]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	0	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 6:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 7:
+
+IF:
+	Waiting:
+	Executed: [BEQ R1, R2, #36]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 8:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [LW R3, 316(R6)]
+	Entry 1: [LW R4, 332(R6)]
+	Entry 2: [MUL R5, R3, R4]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 9:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [LW R3, 316(R6)]
+	Entry 1: [LW R4, 332(R6)]
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 10:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [LW R4, 332(R6)]
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [LW R3, 316(R6)]
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 11:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [LW R4, 332(R6)]
+Buf6:
+Buf7:
+Buf8: [-1, R3]
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	0	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 12:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8: [2, R4]
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	0	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 13:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 14:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 15:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7: [MUL R5, R3, R4]
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 16:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9: [MUL R5, R3, R4]
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 17:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10: [-2, R5]
+
+Registers
+R00:	0	0	3	-1	2	0	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 18:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	-2	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 19:
+
+IF:
+	Waiting:
+	Executed: [BGTZ R5, #4]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	-2	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 20:
+
+IF:
+	Waiting:
+	Executed:
+Buf1:
+	Entry 0: [ADDI R5, R5, #12]
+	Entry 1: [SW R5, 348(R6)]
+	Entry 2: [ADDI R1, R1, #1]
+	Entry 3: [ADDI R6, R6, #4]
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	-2	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 21:
+
+IF:
+	Waiting:
+	Executed: [J #272]
+Buf1:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1: [ADDI R6, R6, #4]
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R5, R5, #12]
+	Entry 1: [ADDI R1, R1, #1]
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	-2	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 22:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1: [ADDI R6, R6, #4]
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R1, R1, #1]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [10, R5]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	-2	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 23:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1: [ADDI R6, R6, #4]
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [1, R1]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	0	3	-1	2	10	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 24:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [ADDI R6, R6, #4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-1	2	10	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 25:
+
+IF:
+	Waiting:
+	Executed: [BEQ R1, R2, #36]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R6, R6, #4]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [SW R5, 348(R6)]
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-1	2	10	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	7	9	1	0	-1	1	-1	0
+--------------------
+Cycle 26:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [LW R3, 316(R6)]
+	Entry 1: [LW R4, 332(R6)]
+	Entry 2: [MUL R5, R3, R4]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [4, R6]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-1	2	10	0	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 27:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [LW R3, 316(R6)]
+	Entry 1: [LW R4, 332(R6)]
+	Entry 2: [MUL R5, R3, R4]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-1	2	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 28:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [LW R3, 316(R6)]
+	Entry 1: [LW R4, 332(R6)]
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-1	2	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 29:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [LW R4, 332(R6)]
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [LW R3, 316(R6)]
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-1	2	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 30:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [LW R4, 332(R6)]
+Buf6:
+Buf7:
+Buf8: [-2, R3]
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-1	2	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 31:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8: [4, R4]
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	2	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 32:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 33:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 34:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7: [MUL R5, R3, R4]
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 35:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9: [MUL R5, R3, R4]
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 36:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10: [-8, R5]
+
+Registers
+R00:	0	1	3	-2	4	10	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 37:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	-8	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 38:
+
+IF:
+	Waiting:
+	Executed: [BGTZ R5, #4]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	-8	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 39:
+
+IF:
+	Waiting:
+	Executed:
+Buf1:
+	Entry 0: [ADDI R5, R5, #12]
+	Entry 1: [SW R5, 348(R6)]
+	Entry 2: [ADDI R1, R1, #1]
+	Entry 3: [ADDI R6, R6, #4]
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	-8	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 40:
+
+IF:
+	Waiting:
+	Executed: [J #272]
+Buf1:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1: [ADDI R6, R6, #4]
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R5, R5, #12]
+	Entry 1: [ADDI R1, R1, #1]
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	-8	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 41:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1: [ADDI R6, R6, #4]
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R1, R1, #1]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [4, R5]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	-8	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 42:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1: [ADDI R6, R6, #4]
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [2, R1]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	1	3	-2	4	4	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 43:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [ADDI R6, R6, #4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-2	4	4	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 44:
+
+IF:
+	Waiting:
+	Executed: [BEQ R1, R2, #36]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R6, R6, #4]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [SW R5, 348(R6)]
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-2	4	4	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	9	1	0	-1	1	-1	0
+--------------------
+Cycle 45:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [LW R3, 316(R6)]
+	Entry 1: [LW R4, 332(R6)]
+	Entry 2: [MUL R5, R3, R4]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [8, R6]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-2	4	4	4	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 46:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [LW R3, 316(R6)]
+	Entry 1: [LW R4, 332(R6)]
+	Entry 2: [MUL R5, R3, R4]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-2	4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 47:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [LW R3, 316(R6)]
+	Entry 1: [LW R4, 332(R6)]
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-2	4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 48:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [LW R4, 332(R6)]
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [LW R3, 316(R6)]
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-2	4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 49:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [LW R4, 332(R6)]
+Buf6:
+Buf7:
+Buf8: [-3, R3]
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-2	4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 50:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8: [-4, R4]
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-3	4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 51:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-3	-4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 52:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0: [MUL R5, R3, R4]
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-3	-4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 53:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7: [MUL R5, R3, R4]
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-3	-4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 54:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9: [MUL R5, R3, R4]
+Buf10:
+
+Registers
+R00:	0	2	3	-3	-4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 55:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10: [12, R5]
+
+Registers
+R00:	0	2	3	-3	-4	4	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 56:
+
+IF:
+	Waiting: [BGTZ R5, #4]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-3	-4	12	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 57:
+
+IF:
+	Waiting:
+	Executed: [BGTZ R5, #4]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-3	-4	12	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 58:
+
+IF:
+	Waiting:
+	Executed: [J #272]
+Buf1:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1: [ADDI R1, R1, #1]
+	Entry 2: [ADDI R6, R6, #4]
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-3	-4	12	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 59:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0: [ADDI R6, R6, #4]
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0: [SW R5, 348(R6)]
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R1, R1, #1]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-3	-4	12	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 60:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0: [ADDI R6, R6, #4]
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5: [SW R5, 348(R6)]
+Buf6: [3, R1]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	2	3	-3	-4	12	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	1	0	-1	1	-1	0
+--------------------
+Cycle 61:
+
+IF:
+	Waiting: [BEQ R1, R2, #36]
+	Executed:
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6: [12, R6]
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	3	3	-3	-4	12	8	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	12	0	-1	1	-1	0
+--------------------
+Cycle 62:
+
+IF:
+	Waiting:
+	Executed: [BEQ R1, R2, #36]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	3	3	-3	-4	12	12	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	12	0	-1	1	-1	0
+--------------------
+Cycle 63:
+
+IF:
+	Waiting:
+	Executed: [BREAK]
+Buf1:
+	Entry 0:
+	Entry 1:
+	Entry 2:
+	Entry 3:
+	Entry 4:
+	Entry 5:
+	Entry 6:
+	Entry 7:
+Buf2:
+	Entry 0:
+	Entry 1:
+Buf3:
+	Entry 0:
+	Entry 1:
+Buf4:
+	Entry 0:
+	Entry 1:
+Buf5:
+Buf6:
+Buf7:
+Buf8:
+Buf9:
+Buf10:
+
+Registers
+R00:	0	3	3	-3	-4	12	12	0
+R08:	0	0	0	0	0	0	0	0
+R16:	0	0	0	0	0	0	0	0
+R24:	0	0	0	0	0	0	0	0
+
+Data
+316:	-1	-2	-3	1	2	4	-4	10
+348:	10	4	12	0	-1	1	-1	0
