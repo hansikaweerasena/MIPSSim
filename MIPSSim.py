@@ -193,7 +193,7 @@ class FetchDecodeUnit:
                     self.program_counter = self.program_counter + offset // 4
             elif instruction[1] == 'BGTZ':
                 rs = self.scoreboard.get_reg_value_for_branch(int(instruction[2][1:]))
-                offset = int(instruction[2][1:])
+                offset = int(instruction[3][1:])
                 if rs > 0:
                     self.program_counter = self.program_counter + offset // 4
             self.is_stalled = False
