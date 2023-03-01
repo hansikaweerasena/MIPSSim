@@ -1,7 +1,3 @@
-# Hansika Weerasena
-# Command to run on terminal: python3 MIPSsim.py inputfilename.txt
-# On my honor, I have neither given nor received unauthorized aid on this assignment.
-
 import sys
 
 STARTING_MEMORY_ADDRESS = 260
